@@ -61,7 +61,7 @@ exports.adminVerify = async (req, res) => {
         await admin.findByIdAndUpdate(
             verified._id,
             {
-                adminVerify:true
+            adminVerify:true
             },
             {
                 new : true
@@ -177,7 +177,7 @@ exports.adminLogout=async(req,res)=>{
             email,
             password,
         }, process.env.JWTDESTROY);
-        doc.token=token 
+        admin.token=token 
         res.status(200).json(
             {message:"Sucessfully logged out"}
         )
