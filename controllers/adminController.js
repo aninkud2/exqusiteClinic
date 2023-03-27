@@ -36,7 +36,8 @@ const hash = bcryptjs.hashSync(password, salt);
         await newAdmin.save()
 
         const VerifyLink = `${req.protocol}://${req.get("host")}/api/adminVerify/${newAdmin._id}`
-        const message = `Thank you for registering with us. Please click on this link ${VerifyLink} to verify`;
+        const pageUrl = `${req.protocol}://exquisite-clinic.vercel.app/#/verify/${newAdmin._id}`
+        const message = `Thank you for registering with us. Please click on this link ${pageUrl} to verify`;
         SendEmail({
           email: newAdmin.email,
           subject: "Kindly verify",

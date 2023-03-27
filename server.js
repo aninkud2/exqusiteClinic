@@ -34,4 +34,3 @@ mongoose.connect(db, {
     console.log("Server is listening to PORT: 5555")
 })
 })
-
